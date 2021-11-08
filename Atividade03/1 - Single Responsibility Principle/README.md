@@ -5,8 +5,8 @@
 
 <p>Pode ocasionar problemas como:</p>
 <ul>
-  <li>Falta de coesão</li>
-  <li>Alto acoplamento — Mais responsabilidades geram um maior nível de dependências, deixando o sistema engessado e frágil para alterações;</li>
-  <li>Dificuldades na implementação de testes automatizados</li>
-  <li>Dificuldades para reaproveitar o código;</li>
+  <li>Falta de coesão;</li>
+  <li>Alto acoplamento;</li>
+  <li>Dificuldades na implementação de testes automatizados;</li>
+  <li>Dificuldades para reaproveitar o código.</li>
 </ul>
