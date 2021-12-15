@@ -2,8 +2,8 @@ package com.api.salaospring.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.salaospring.AuthenticationRequest;
-import com.api.salaospring.AuthenticationResponse;
+import com.api.salaospring.auth.AuthenticationRequest;
+import com.api.salaospring.auth.AuthenticationResponse;
 import com.api.salaospring.models.UserModel;
 import com.api.salaospring.repositories.UserRepository;
 

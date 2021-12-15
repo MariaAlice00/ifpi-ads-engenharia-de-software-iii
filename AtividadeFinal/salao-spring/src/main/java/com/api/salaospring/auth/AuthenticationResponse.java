@@ -1,4 +1,4 @@
-package com.api.salaospring;
+package com.api.salaospring.auth;
 
 public class AuthenticationResponse {
     private String response;
