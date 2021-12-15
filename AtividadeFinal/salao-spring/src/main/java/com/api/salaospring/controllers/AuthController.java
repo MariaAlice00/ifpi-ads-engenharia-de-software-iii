@@ -23,7 +23,7 @@ public class AuthController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @PostMapping("/subs")
+    @PostMapping("/register")
     private ResponseEntity<?> subscribeClient(@RequestBody AuthenticationRequest authenticationRequest) {
         String username = authenticationRequest.getUsername();
         String password = authenticationRequest.getPassword();
@@ -34,13 +34,13 @@ public class AuthController {
         try {
             userRepository.save(userModel);
         } catch (Exception e) {
-            return ResponseEntity.ok(new AuthenticationResponse("Error during client subscription " + username));
+            return ResponseEntity.ok(new AuthenticationResponse("Erro durante o registro do(a) cliente " + username));
         }
 
-        return ResponseEntity.ok(new AuthenticationResponse("Successfull subscription for client " + username));
+        return ResponseEntity.ok(new AuthenticationResponse("Sucesso no registro do(a) cliente " + username));
     }
     
-    @PostMapping("/auth")
+    @PostMapping("/login")
     private ResponseEntity<?> authenticateClient(@RequestBody AuthenticationRequest authenticationRequest) {
         String username = authenticationRequest.getUsername();
         String password = authenticationRequest.getPassword();
@@ -48,9 +48,9 @@ public class AuthController {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
         } catch (Exception e) {
-            return ResponseEntity.ok(new AuthenticationResponse("Error during client authentication " + username));
+            return ResponseEntity.ok(new AuthenticationResponse("Erro durante a autenticação do(a) cliente " + username));
         }
 
-        return ResponseEntity.ok(new AuthenticationResponse("Successfull authentication for client " + username));
+        return ResponseEntity.ok(new AuthenticationResponse("Sucesso na autenticação do(a) cliente " + username));
     }
 }
